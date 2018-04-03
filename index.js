@@ -9,16 +9,16 @@ const app = express();
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-var myLogger = function (req, res, next) {
-  if (req.headers.apikey != "12345") {
-    res.status(401);
-    res.send("INVALID API KEY");
-  } else {
-    next();
-  }
-};
+// var myLogger = function (req, res, next) {
+//   if (req.headers.apikey != "12345") {
+//     res.status(401);
+//     res.send("INVALID API KEY");
+//   } else {
+//     next();
+//   }
+// };
 
-app.use(myLogger);
+// app.use(myLogger);
 
 // Put all API endpoints under '/api'
 app.get('/api/passwords', (req, res) => {
